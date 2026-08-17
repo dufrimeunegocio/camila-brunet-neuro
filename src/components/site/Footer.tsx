@@ -80,9 +80,14 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs sm:flex-row sm:items-center sm:justify-between lg:px-8">
-          <p>© {year} Camila Brunet — Neuropsicologia. Todos os direitos reservados.</p>
-          <p>Registro profissional: [inserir CRP]</p>
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-xs sm:flex-row sm:items-center sm:justify-between lg:px-8">
+          <div className="space-y-1">
+            <p>© {year} Camila Brunet — Neuropsicologia. Todos os direitos reservados.</p>
+            <p className="opacity-70">
+              Conteúdo informativo. Não substitui consulta profissional.
+            </p>
+          </div>
+          <p className="font-medium text-white/90">Registro profissional: [Inserir CRP]</p>
         </div>
       </div>
     </footer>
