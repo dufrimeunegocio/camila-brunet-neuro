@@ -45,16 +45,6 @@ export function Header() {
         </a>
 
         <div className="flex items-center gap-6">
-          <a 
-            href={contato.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden text-navy/60 transition-colors hover:text-wine sm:flex items-center gap-2 text-xs font-medium"
-            aria-label="Instagram de Camila Brunet"
-          >
-            <Instagram className="h-4 w-4" />
-            <span className="hidden lg:inline">{contato.instagramHandle}</span>
-          </a>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-7 xl:flex">
           {navLinks.map((l) => (

@@ -64,12 +64,9 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-xs sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <div className="space-y-1">
-            <p>© {year} Camila Brunet — Neuropsicologia. Todos os direitos reservados.</p>
-            <p className="opacity-70">
-              * Informações demonstrativas para apresentação de layout.
-            </p>
+            <p className="text-white/70">© {year} Camila Brunet — Neuropsicologia. Todos os direitos reservados.</p>
           </div>
-          <p className="font-medium text-white/90">Registro profissional demonstrativo: {contato.crpFicticio}</p>
+          <p className="font-medium text-white/90">Registro profissional: {contato.crp}</p>
         </div>
       </div>
     </footer>
