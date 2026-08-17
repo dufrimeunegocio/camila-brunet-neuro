@@ -136,13 +136,25 @@ export const servicosSecundarios = [
   },
 ];
 
+export const sobreCamila = {
+  texto: "Camila Brunet é neuropsicóloga, dedicada à compreensão do funcionamento cognitivo, emocional e comportamental de cada pessoa. Seu trabalho busca unir conhecimento técnico, escuta cuidadosa e uma abordagem individualizada, tornando o processo de avaliação mais claro, acolhedor e significativo.",
+  itens: [
+    { label: "Formação", value: "Psicologia — formação acadêmica fictícia para demonstração do layout." },
+    { label: "Especialização", value: "Pós-graduação em Neuropsicologia e Avaliação Neuropsicológica — informação fictícia para demonstração." },
+    { label: "Experiência", value: "Atuação clínica com foco em avaliação neuropsicológica, investigação cognitiva e acompanhamento de diferentes demandas relacionadas ao funcionamento mental — informação fictícia para demonstração." },
+    { label: "Localização", value: "São Paulo — SP" },
+    { label: "Atendimento", value: "Online para todo o Brasil" },
+    { label: "Registro profissional", value: "CRP 06/123456 (Dado demonstrativo fictício)" },
+  ]
+};
+
 export const diferenciais = [
   { titulo: "Individualidade", texto: "Cada avaliação parte de uma demanda específica." },
   {
     titulo: "Escuta",
     texto: "Compreender a história e o contexto é parte importante do processo.",
   },
-  { titulo: "Análise", texto: "Os resultados devem ser interpretados de forma integrada." },
+  { titulo: "Análise", texto: "Los resultados devem ser interpretados de forma integrada." },
   { titulo: "Clareza", texto: "As informações devem ser apresentadas de maneira compreensível." },
 ];
 
