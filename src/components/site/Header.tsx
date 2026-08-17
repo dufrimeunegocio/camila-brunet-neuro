@@ -55,10 +55,10 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#contato"
+            href="#avaliacao"
             className="rounded-md bg-wine px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_20px_-10px_var(--wine)] transition-all duration-300 hover:bg-wine-dark hover:shadow-[0_10px_24px_-10px_var(--wine)]"
           >
-            Agendar avaliação
+            Conhecer a avaliação
           </a>
         </nav>
 
