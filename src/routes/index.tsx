@@ -9,21 +9,23 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
 import {
+  contato,
   diferenciais,
   dominios,
   etapas,
   faq,
-  servicosSecundarios,
+  servicos,
   sinais,
+  sobreCamila,
 } from "@/components/site/content";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { CookieBanner } from "@/components/site/CookieBanner";
 import heroFoto from "@/assets/camila-hero.png.asset.json";
 import sobreFoto from "@/assets/camila-sobre.png.asset.json";
 
-const TITLE = "Camila Brunet | Neuropsicologia — Avaliação Neuropsicológica";
+const TITLE = "Camila Brunet | Neuropsicologia — São Paulo & Online";
 const DESCRIPTION =
-  "Avaliação neuropsicológica com olhar individualizado e acolhedor. Compreenda seu funcionamento cognitivo com a neuropsicóloga Camila Brunet.";
+  "Neuropsicóloga Camila Brunet em São Paulo e atendimento online. Avaliação neuropsicológica individualizada para compreender o funcionamento cognitivo e emocional.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -34,8 +36,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://camila-brunet.lovable.app" },
       { property: "og:locale", content: "pt_BR" },
+      { name: "geo.region", content: "BR-SP" },
+      { name: "geo.placename", content: "São Paulo" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
@@ -51,6 +55,13 @@ export const Route = createFileRoute("/")({
               "@type": ["Psychologist", "ProfessionalService"],
               name: "Camila Brunet — Neuropsicologia",
               description: DESCRIPTION,
+              address: {
+                "@type": "PostalAddress",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "addressCountry": "BR"
+              },
+              areaServed: "BR",
               medicalSpecialty: "Psychiatric",
               knowsAbout: [
                 "Avaliação neuropsicológica",
@@ -107,10 +118,10 @@ function Index() {
             aria-hidden="true"
             className="pointer-events-none absolute -left-24 bottom-24 h-64 w-64 rounded-full border border-navy/10"
           />
-          <div className="mx-auto grid max-w-7xl items-end gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-            <Reveal className="pb-14 lg:pb-24">
-              <SectionLabel>Neuropsicologia</SectionLabel>
-              <h1 className="mt-6 max-w-xl text-[2.15rem] leading-[1.12] text-navy sm:text-5xl lg:text-[3.4rem]">
+          <div className="mx-auto grid max-w-7xl items-end gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+            <Reveal className="pb-16 lg:pb-32">
+              <SectionLabel>Neuropsicologia • Atendimento Online</SectionLabel>
+              <h1 className="mt-6 max-w-xl text-[2.25rem] font-display leading-[1.1] text-navy sm:text-5xl lg:text-[3.6rem]">
                 Avaliação Neuropsicológica com olhar{" "}
                 <span className="text-wine">individualizado</span> e acolhedor
               </h1>
@@ -120,32 +131,16 @@ function Index() {
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="#contato"
-                  className="rounded-md bg-wine px-7 py-4 text-center text-[15px] font-medium text-white shadow-[0_10px_30px_-14px_var(--wine)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-wine-dark"
+                  href="#avaliacao"
+                  className="rounded-md bg-wine px-10 py-4 text-center text-[15px] font-medium text-white shadow-[0_10px_30px_-14px_var(--wine)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-wine-dark"
                 >
-                  Agendar avaliação
-                </a>
-                <a
-                  href="#sobre"
-                  className="rounded-md border border-navy/20 px-7 py-4 text-center text-[15px] font-medium text-navy transition-all duration-300 hover:border-navy hover:bg-navy hover:text-white"
-                >
-                  Conheça meu trabalho
+                  Conhecer a avaliação
                 </a>
               </div>
-              <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-6">
-                {[
-                  { label: "Escuta", sub: "Acolhimento" },
-                  { label: "Rigor técnico", sub: "Precisão" },
-                  { label: "Clareza", sub: "Transparência" },
-                ].map((item) => (
-                  <div key={item.label}>
-                    <dt className="font-display text-lg text-navy">{item.label}</dt>
-                    <dd className="mt-1 text-[10px] font-medium uppercase tracking-wider text-wine/70">
-                      {item.sub}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="mt-8 flex items-center gap-2 text-[13px] font-medium text-navy/60">
+                <span className="h-1.5 w-1.5 rounded-full bg-wine animate-pulse" />
+                {contato.atendimento}
+              </p>
             </Reveal>
 
             <Reveal delay={120} className="relative flex justify-center lg:justify-end">
@@ -184,19 +179,24 @@ function Index() {
               </p>
             </Reveal>
 
-            <ul className="mt-12 grid gap-x-8 gap-y-px sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {sinais.map((sinal, i) => (
-                <Reveal as="li" key={sinal} delay={i * 45}>
-                  <div className="group flex items-start gap-4 border-b border-border py-5 transition-colors hover:border-wine/40">
-                    <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-wine transition-transform duration-300 group-hover:scale-150"
-                      aria-hidden="true"
-                    />
-                    <span className="text-[15px] leading-snug text-navy/85">{sinal}</span>
+                <Reveal key={sinal} delay={i * 50}>
+                  <div className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background p-6 transition-all duration-500 hover:-translate-y-2 hover:border-wine/30 hover:shadow-[0_20px_40px_-20px_rgba(122,24,51,0.15)]">
+                    <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-wine/5 transition-transform duration-500 group-hover:scale-[2.5]" aria-hidden="true" />
+                    <span className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-offwhite text-wine transition-colors duration-300 group-hover:bg-wine group-hover:text-white">
+                      <span className="h-1.5 w-1.5 rotate-45 border-r border-b border-current" aria-hidden="true" />
+                    </span>
+                    <h3 className="relative mt-6 text-[15px] font-medium leading-relaxed text-navy group-hover:text-wine-dark transition-colors">
+                      {sinal}
+                    </h3>
+                    <div className="mt-auto pt-4">
+                      <div className="h-0.5 w-0 bg-wine transition-all duration-500 group-hover:w-8" aria-hidden="true" />
+                    </div>
                   </div>
                 </Reveal>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
@@ -274,48 +274,40 @@ function Index() {
               </h2>
             </Reveal>
 
-            <Reveal delay={80}>
-              <article className="mt-12 grid gap-8 rounded-xl border border-wine/20 bg-background p-8 sm:p-12 lg:grid-cols-[1.1fr_1fr]">
-                <div>
-                  <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-wine">
-                    Serviço principal
-                  </p>
-                  <h3 className="mt-4 text-3xl text-navy sm:text-4xl">
-                    Avaliação Neuropsicológica
-                  </h3>
-                  <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
-                    Processo conduzido de forma individualizada, a partir da demanda apresentada,
-                    com investigação de aspectos cognitivos, comportamentais e emocionais e
-                    devolutiva clara ao final.
-                  </p>
-                  <div className="mt-6 flex items-center gap-2 text-[13px] font-medium text-wine">
-                    <span className="h-px w-6 bg-wine" aria-hidden="true" />
-                    [Inserir descrição completa do serviço]
-                  </div>
-                </div>
-                <ul className="grid content-start gap-3 sm:grid-cols-2">
-                  {dominios.map((d) => (
-                    <li
-                      key={d.titulo}
-                      className="rounded-md border border-border px-4 py-3 text-sm text-navy/85"
-                    >
-                      {d.titulo}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
-
-            <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {servicosSecundarios.map((s, i) => (
-                <Reveal as="li" key={s.titulo} delay={i * 60}>
-                  <article className="h-full rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-wine/30">
-                    <h3 className="text-lg leading-snug text-navy">{s.titulo}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.texto}</p>
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {servicos.map((s, i) => (
+                <Reveal key={s.titulo} delay={i * 60}>
+                  <article className={`group h-full flex flex-col rounded-xl border p-8 transition-all duration-300 hover:-translate-y-1 ${
+                    s.principal 
+                      ? "border-wine/30 bg-background shadow-[0_20px_50px_-20px_rgba(122,24,51,0.12)] lg:col-span-2 lg:flex-row lg:gap-10" 
+                      : "border-border bg-background hover:border-wine/20"
+                  }`}>
+                    <div className={s.principal ? "lg:flex-1" : ""}>
+                      {s.principal && (
+                        <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-wine">
+                          Serviço principal
+                        </p>
+                      )}
+                      <h3 className={`text-navy ${s.principal ? "text-2xl sm:text-3xl" : "text-xl"}`}>
+                        {s.titulo}
+                      </h3>
+                      <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
+                        {s.texto}
+                      </p>
+                    </div>
+                    {s.principal && (
+                      <div className="mt-8 flex flex-wrap gap-2 lg:mt-0 lg:w-64 lg:content-start">
+                        {dominios.slice(0, 4).map((d) => (
+                          <span key={d.titulo} className="rounded-full bg-offwhite px-4 py-1.5 text-[11px] font-medium text-navy/70 border border-navy/5">
+                            {d.titulo}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </article>
                 </Reveal>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
@@ -342,31 +334,26 @@ function Index() {
             </Reveal>
 
             <Reveal delay={100}>
-              <SectionLabel>Sobre</SectionLabel>
+              <SectionLabel>Sobre Camila Brunet</SectionLabel>
               <h2 className="mt-6 text-[1.75rem] leading-tight text-navy sm:text-4xl">
-                Conheça Camila Brunet
+                Sobre Camila Brunet
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
-                Um trabalho construído a partir da escuta, do cuidado com cada história e do rigor
-                técnico em todas as etapas da avaliação neuropsicológica.
+              <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
+                {sobreCamila.texto}
               </p>
               <dl className="mt-9 space-y-5">
-                {[
-                  ["Formação", "[Inserir formação profissional]"],
-                  ["Especialização", "[Inserir experiência e especializações]"],
-                  ["Registro profissional", "[Inserir número de registro profissional]"],
-                  ["Experiência", "[Inserir experiência e especializações]"],
-                  ["Abordagem de trabalho", "[Inserir abordagem de trabalho]"],
-                  ["Áreas de atuação", "[Inserir áreas de atuação]"],
-                ].map(([label, value]) => (
-                  <div key={label} className="border-b border-border pb-4">
-                    <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-wine">
-                      {label}
+                {sobreCamila.itens.map((item) => (
+                  <div key={item.label} className="border-b border-border pb-4">
+                    <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-wine">
+                      {item.label}
                     </dt>
-                    <dd className="mt-1.5 text-[15px] text-navy/85">{value}</dd>
+                    <dd className="mt-1.5 text-[15px] text-navy/85 leading-relaxed">{item.value}</dd>
                   </div>
                 ))}
               </dl>
+              <p className="mt-8 text-[11px] italic text-muted-foreground/60">
+                * As informações acima são demonstrativas para este layout.
+              </p>
             </Reveal>
           </div>
         </section>
@@ -402,13 +389,12 @@ function Index() {
         <section id="faq" className="bg-background py-20 lg:py-28">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
             <Reveal>
-              <SectionLabel>Dúvidas frequentes</SectionLabel>
+              <SectionLabel>Perguntas frequentes</SectionLabel>
               <h2 className="mt-6 text-[1.75rem] leading-tight text-navy sm:text-4xl">
-                Perguntas frequentes sobre a avaliação
+                Perguntas frequentes
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
-                Informações gerais para ajudar na compreensão do processo. Dúvidas específicas podem
-                ser esclarecidas no primeiro contato.
+                Confira algumas das principais dúvidas sobre avaliação neuropsicológica e o processo de acompanhamento.
               </p>
             </Reveal>
             <Reveal delay={100}>

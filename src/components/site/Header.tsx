@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
-import { navLinks } from "./content";
+import { navLinks, contato } from "./content";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -44,6 +44,18 @@ export function Header() {
           </span>
         </a>
 
+        <div className="flex items-center gap-6">
+          <a 
+            href={contato.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden text-navy/60 transition-colors hover:text-wine sm:flex items-center gap-2 text-xs font-medium"
+            aria-label="Instagram de Camila Brunet"
+          >
+            <Instagram className="h-4 w-4" />
+            <span className="hidden lg:inline">{contato.instagramHandle}</span>
+          </a>
+
         <nav aria-label="Navegação principal" className="hidden items-center gap-7 xl:flex">
           {navLinks.map((l) => (
             <a
@@ -55,12 +67,13 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#contato"
+            href="#avaliacao"
             className="rounded-md bg-wine px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_20px_-10px_var(--wine)] transition-all duration-300 hover:bg-wine-dark hover:shadow-[0_10px_24px_-10px_var(--wine)]"
           >
-            Agendar avaliação
+            Conhecer a avaliação
           </a>
         </nav>
+        </div>
 
         <button
           type="button"
@@ -94,11 +107,11 @@ export function Header() {
             ))}
           </ul>
           <a
-            href="#contato"
+            href="#avaliacao"
             onClick={() => setOpen(false)}
             className="mt-5 block rounded-md bg-wine px-5 py-3.5 text-center text-[15px] font-medium text-white"
           >
-            Agendar avaliação
+            Conhecer a avaliação
           </a>
         </nav>
       </div>
