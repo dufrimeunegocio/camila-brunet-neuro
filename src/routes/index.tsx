@@ -23,9 +23,9 @@ import { CookieBanner } from "@/components/site/CookieBanner";
 import heroFoto from "@/assets/camila-hero.png.asset.json";
 import sobreFoto from "@/assets/camila-sobre.png.asset.json";
 
-const TITLE = "Camila Brunet | Neuropsicologia — Avaliação Neuropsicológica";
+const TITLE = "Camila Brunet | Neuropsicologia — São Paulo & Online";
 const DESCRIPTION =
-  "Avaliação neuropsicológica com olhar individualizado e acolhedor. Compreenda seu funcionamento cognitivo com a neuropsicóloga Camila Brunet.";
+  "Neuropsicóloga Camila Brunet em São Paulo e atendimento online. Avaliação neuropsicológica individualizada para compreender o funcionamento cognitivo e emocional.";
 
 export const Route = createFileRoute("/")({
   component: Index,
