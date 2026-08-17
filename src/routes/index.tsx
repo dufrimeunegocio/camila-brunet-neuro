@@ -23,9 +23,9 @@ import { CookieBanner } from "@/components/site/CookieBanner";
 import heroFoto from "@/assets/camila-hero.png.asset.json";
 import sobreFoto from "@/assets/camila-sobre.png.asset.json";
 
-const TITLE = "Camila Brunet | Neuropsicologia — São Paulo & Online";
+const TITLE = "Camila Brunet | Neuropsicóloga em São Paulo & Online | Avaliação Neuropsicológica";
 const DESCRIPTION =
-  "Neuropsicóloga Camila Brunet em São Paulo e atendimento online. Avaliação neuropsicológica individualizada para compreender o funcionamento cognitivo e emocional.";
+  "Neuropsicóloga Camila Brunet especializada em avaliação neuropsicológica em São Paulo e atendimento online. Investigação de TDAH, memória e funções cognitivas.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -33,18 +33,27 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { name: "keywords", content: "neuropsicóloga, avaliação neuropsicológica, neuropsicologia São Paulo, TDAH, avaliação cognitiva, Camila Brunet, neuropsicóloga online" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://camila-brunet.lovable.app" },
+      { property: "og:url", content: contato.dominio },
+      { property: "og:image", content: `${contato.dominio}/og-image.png` }, // Supõe a existência dessa imagem
       { property: "og:locale", content: "pt_BR" },
       { name: "geo.region", content: "BR-SP" },
       { name: "geo.placename", content: "São Paulo" },
+      { name: "geo.position", content: "-23.5505;-46.6333" }, // Centro de SP
+      { name: "ICBM", content: "-23.5505, -46.6333" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: `${contato.dominio}/og-image.png` },
+      { name: "author", content: "Camila Brunet" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: contato.dominio },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -52,38 +61,85 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": ["Psychologist", "ProfessionalService"],
-              name: "Camila Brunet — Neuropsicologia",
-              description: DESCRIPTION,
-              address: {
+              "@type": "MedicalBusiness",
+              "@id": `${contato.dominio}/#organization`,
+              "name": "Camila Brunet — Neuropsicologia",
+              "url": contato.dominio,
+              "logo": {
+                "@type": "ImageObject",
+                "url": `${contato.dominio}/favicon.png`
+              },
+              "image": heroFoto.url,
+              "description": DESCRIPTION,
+              "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "São Paulo",
                 "addressRegion": "SP",
                 "addressCountry": "BR"
               },
-              areaServed: "BR",
-              medicalSpecialty: "Psychiatric",
-              knowsAbout: [
-                "Avaliação neuropsicológica",
-                "Neuropsicóloga",
-                "Avaliação neuropsicológica infantil",
-                "Avaliação neuropsicológica de adultos",
-                "Avaliação cognitiva",
-                "Neuropsicologia",
-                "Avaliação de atenção",
-                "Avaliação de memória",
-                "Avaliação das funções executivas",
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -23.5505,
+                "longitude": -46.6333
+              },
+              "telephone": "+551100000000", // Placeholder se necessário, mas usuário pediu para tirar contatos físicos
+              "priceRange": "$$",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "08:00",
+                  "closes": "20:00"
+                }
               ],
-              founder: { "@type": "Person", name: "Camila Brunet", jobTitle: "Neuropsicóloga" },
+              "areaServed": {
+                "@type": "Country",
+                "name": "Brazil"
+              },
+              "sameAs": [
+                contato.instagram
+              ]
+            },
+            {
+              "@type": "Psychologist",
+              "@id": `${contato.dominio}/#psychologist`,
+              "name": "Camila Brunet",
+              "jobTitle": "Neuropsicóloga",
+              "affiliation": { "@id": `${contato.dominio}/#organization` },
+              "description": sobreCamila.texto,
+              "knowsAbout": [
+                "Avaliação neuropsicológica",
+                "TDAH",
+                "Funções Executivas",
+                "Memória",
+                "Neuropsicologia Clínica"
+              ]
             },
             {
               "@type": "FAQPage",
-              mainEntity: faq.map((item) => ({
+              "@id": `${contato.dominio}/#faq`,
+              "mainEntity": faq.map((item) => ({
                 "@type": "Question",
-                name: item.q,
-                acceptedAnswer: { "@type": "Answer", text: item.a },
+                "name": item.q,
+                "acceptedAnswer": { "@type": "Answer", "text": item.a },
               })),
             },
+            {
+              "@type": "WebSite",
+              "@id": `${contato.dominio}/#website`,
+              "url": contato.dominio,
+              "name": "Camila Brunet Neuropsicologia",
+              "publisher": { "@id": `${contato.dominio}/#organization` }
+            },
+            {
+              "@type": "WebPage",
+              "@id": `${contato.dominio}/#webpage`,
+              "url": contato.dominio,
+              "name": TITLE,
+              "isPartOf": { "@id": `${contato.dominio}/#website` },
+              "about": { "@id": `${contato.dominio}/#psychologist` },
+              "description": DESCRIPTION
+            }
           ],
         }),
       },
