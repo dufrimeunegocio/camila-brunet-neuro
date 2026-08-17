@@ -9,15 +9,15 @@ export const navLinks = [
   { label: "Avaliação Neuropsicológica", href: "#avaliacao" },
   { label: "Serviços", href: "#servicos" },
   { label: "FAQ", href: "#faq" },
-  { label: "Contato", href: "#contato" },
 ];
 
-/** Preencher quando os canais forem fornecidos (ex.: "https://wa.me/55...") */
+/** Dados demonstrativos/fictícios para layout */
 export const contato = {
-  whatsapp: "",
-  instagram: "",
-  email: "",
-  endereco: "",
+  instagram: "https://www.instagram.com/camila_brunet/",
+  instagramHandle: "@camila_brunet",
+  localizacao: "São Paulo — SP",
+  atendimento: "Atendimento online para todo o Brasil",
+  crpFicticio: "CRP 06/123456", // Dado demonstrativo fictício
 };
 
 export const sinais = [
