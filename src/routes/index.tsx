@@ -16,12 +16,14 @@ import {
   servicosSecundarios,
   sinais,
 } from "@/components/site/content";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { CookieBanner } from "@/components/site/CookieBanner";
 import heroFoto from "@/assets/camila-hero.png.asset.json";
 import sobreFoto from "@/assets/camila-sobre.png.asset.json";
 
-const TITLE = "Camila Brunet | Neuropsicóloga — Avaliação Neuropsicológica";
+const TITLE = "Camila Brunet | Neuropsicologia — Avaliação Neuropsicológica";
 const DESCRIPTION =
-  "Avaliação neuropsicológica com olhar individualizado e acolhedor. Compreensão de atenção, memória, funções executivas e linguagem com Camila Brunet, neuropsicóloga.";
+  "Avaliação neuropsicológica com olhar individualizado e acolhedor. Compreenda seu funcionamento cognitivo com a neuropsicóloga Camila Brunet.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -52,8 +54,11 @@ export const Route = createFileRoute("/")({
               medicalSpecialty: "Psychiatric",
               knowsAbout: [
                 "Avaliação neuropsicológica",
-                "Neuropsicologia",
+                "Neuropsicóloga",
+                "Avaliação neuropsicológica infantil",
+                "Avaliação neuropsicológica de adultos",
                 "Avaliação cognitiva",
+                "Neuropsicologia",
                 "Avaliação de atenção",
                 "Avaliação de memória",
                 "Avaliação das funções executivas",
@@ -86,8 +91,10 @@ function SectionLabel({ children }: { children: string }) {
 
 function Index() {
   return (
-    <div className="min-h-dvh bg-background">
+    <div className="min-h-dvh bg-background selection:bg-wine/10 selection:text-wine">
       <Header />
+      <WhatsAppButton />
+      <CookieBanner />
 
       <main id="conteudo">
         {/* HERO */}
@@ -126,10 +133,16 @@ function Index() {
                 </a>
               </div>
               <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-6">
-                {["Escuta", "Rigor técnico", "Clareza"].map((item) => (
-                  <div key={item}>
-                    <dt className="font-display text-lg text-navy">{item}</dt>
-                    <dd className="mt-1 text-xs text-muted-foreground">Em todo o processo</dd>
+                {[
+                  { label: "Escuta", sub: "Acolhimento" },
+                  { label: "Rigor técnico", sub: "Precisão" },
+                  { label: "Clareza", sub: "Transparência" },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <dt className="font-display text-lg text-navy">{item.label}</dt>
+                    <dd className="mt-1 text-[10px] font-medium uppercase tracking-wider text-wine/70">
+                      {item.sub}
+                    </dd>
                   </div>
                 ))}
               </dl>
@@ -153,7 +166,11 @@ function Index() {
         </section>
 
         {/* IDENTIFICAÇÃO */}
-        <section className="bg-background py-20 lg:py-28">
+        <section className="relative overflow-hidden bg-background py-20 lg:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-wine/10 to-transparent"
+          />
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <Reveal className="max-w-2xl">
               <SectionLabel>Quando buscar</SectionLabel>
@@ -271,9 +288,10 @@ function Index() {
                     com investigação de aspectos cognitivos, comportamentais e emocionais e
                     devolutiva clara ao final.
                   </p>
-                  <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-                    [Inserir descrição completa do serviço de avaliação neuropsicológica]
-                  </p>
+                  <div className="mt-6 flex items-center gap-2 text-[13px] font-medium text-wine">
+                    <span className="h-px w-6 bg-wine" aria-hidden="true" />
+                    [Inserir descrição completa do serviço]
+                  </div>
                 </div>
                 <ul className="grid content-start gap-3 sm:grid-cols-2">
                   {dominios.map((d) => (
@@ -302,7 +320,11 @@ function Index() {
         </section>
 
         {/* SOBRE */}
-        <section id="sobre" className="bg-background py-20 lg:py-28">
+        <section id="sobre" className="relative bg-background py-20 lg:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-1/2 top-0 h-40 w-px bg-wine/10 lg:right-8"
+          />
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
             <Reveal className="relative">
               <div
@@ -331,9 +353,9 @@ function Index() {
               <dl className="mt-9 space-y-5">
                 {[
                   ["Formação", "[Inserir formação profissional]"],
-                  ["Especialização", "[Inserir especializações]"],
+                  ["Especialização", "[Inserir experiência e especializações]"],
                   ["Registro profissional", "[Inserir número de registro profissional]"],
-                  ["Experiência", "[Inserir experiência profissional]"],
+                  ["Experiência", "[Inserir experiência e especializações]"],
                   ["Abordagem de trabalho", "[Inserir abordagem de trabalho]"],
                   ["Áreas de atuação", "[Inserir áreas de atuação]"],
                 ].map(([label, value]) => (

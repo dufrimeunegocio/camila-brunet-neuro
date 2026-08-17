@@ -29,7 +29,7 @@ export const sinais = [
   "Questões relacionadas ao desenvolvimento",
   "Suspeitas ou investigação de condições neuropsicológicas",
   "Mudanças no funcionamento cognitivo",
-  "Dificuldades que impactam a rotina, os estudos ou o trabalho",
+  "Dificuldades que impactam a rotina, estudos ou trabalho",
 ];
 
 export const dominios = [
