@@ -66,10 +66,10 @@ export function Footer() {
           <div className="space-y-1">
             <p>© {year} Camila Brunet — Neuropsicologia. Todos os direitos reservados.</p>
             <p className="opacity-70">
-              Conteúdo informativo. Não substitui consulta profissional.
+              * Informações demonstrativas para apresentação de layout.
             </p>
           </div>
-          <p className="font-medium text-white/90">Registro profissional: [Inserir CRP]</p>
+          <p className="font-medium text-white/90">Registro profissional demonstrativo: {contato.crpFicticio}</p>
         </div>
       </div>
     </footer>
