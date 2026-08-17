@@ -312,7 +312,7 @@ function Index() {
               />
             </Reveal>
 
-            <Reveal delay={100}>
+            <Reveal delay={100} className="flex flex-col justify-center">
               <SectionLabel>Sobre Camila Brunet</SectionLabel>
               <h2 className="mt-6 text-[1.75rem] leading-tight text-navy sm:text-4xl">
                 {sobreCamila.titulo}
@@ -320,7 +320,7 @@ function Index() {
               <p className="mt-2 text-sm font-medium uppercase tracking-[0.18em] text-wine">
                 {sobreCamila.crp}
               </p>
-              <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
+              <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground text-justify">
                 {sobreCamila.texto}
               </p>
             </Reveal>
