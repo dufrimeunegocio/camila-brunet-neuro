@@ -1,6 +1,5 @@
 /**
  * Conteúdo editável do site.
- * Textos entre colchetes [ ] são placeholders para preenchimento posterior.
  */
 
 export const navLinks = [
@@ -11,13 +10,12 @@ export const navLinks = [
   { label: "FAQ", href: "#faq" },
 ];
 
-/** Dados demonstrativos/fictícios para layout */
 export const contato = {
   instagram: "https://www.instagram.com/camila_brunet/",
   instagramHandle: "@camila_brunet",
   localizacao: "São Paulo — SP",
   atendimento: "Atendimento online para todo o Brasil",
-  crpFicticio: "CRP 06/123456", // Dado demonstrativo fictício
+  crp: "CRP 06/123456",
 };
 
 export const sinais = [
@@ -34,29 +32,16 @@ export const sinais = [
 
 export const servicos = [
   {
-    titulo: "Avaliação Neuropsicológica",
-    texto: "Processo estruturado para compreender diferentes aspectos do funcionamento cognitivo, emocional e comportamental, considerando as particularidades e necessidades de cada pessoa.",
-    principal: true,
+    titulo: "Avaliação neuropsicológica completa",
+    texto: "Investigação detalhada de memória, atenção, linguagem, raciocínio e funções executivas.",
   },
   {
-    titulo: "Avaliação de Atenção e Funções Executivas",
-    texto: "Investigação de habilidades relacionadas à atenção, concentração, planejamento, organização, controle inibitório, flexibilidade cognitiva e resolução de problemas.",
+    titulo: "Avaliação para TDAH e dificuldades de aprendizagem",
+    texto: "Identificação de alterações cognitivas e comportamentais relacionadas a TDAH, dislexia e outras dificuldades.",
   },
   {
-    titulo: "Avaliação de Memória e Funcionamento Cognitivo",
-    texto: "Análise de diferentes aspectos da memória e de outras funções cognitivas, contribuindo para uma compreensão mais ampla do funcionamento individual.",
-  },
-  {
-    titulo: "Avaliação de Dificuldades de Aprendizagem",
-    texto: "Investigação de aspectos cognitivos relacionados às dificuldades encontradas no processo de aprendizagem, buscando compreender possíveis fatores envolvidos e orientar os próximos passos.",
-  },
-  {
-    titulo: "Orientação Neuropsicológica",
-    texto: "Orientação individualizada a partir das necessidades identificadas, contribuindo para uma melhor compreensão das dificuldades e possibilidades de cada pessoa.",
-  },
-  {
-    titulo: "Acompanhamento e Devolutiva",
-    texto: "Momento destinado à apresentação e compreensão dos resultados da avaliação, com explicações claras e orientações adequadas à demanda apresentada.",
+    titulo: "Avaliação cognitiva e emocional",
+    texto: "Análise das funções cognitivas e aspectos emocionais para auxiliar no diagnóstico e planejamento do tratamento.",
   },
 ];
 
@@ -117,35 +102,10 @@ export const etapas = [
   },
 ];
 
-export const servicosSecundarios = [
-  {
-    titulo: "Orientação relacionada à avaliação",
-    texto: "[Inserir descrição deste serviço]",
-  },
-  {
-    titulo: "Acompanhamento",
-    texto: "[Inserir descrição deste serviço]",
-  },
-  {
-    titulo: "Orientação a familiares",
-    texto: "[Inserir descrição deste serviço]",
-  },
-  {
-    titulo: "Outros serviços em Neuropsicologia",
-    texto: "[Inserir descrição deste serviço]",
-  },
-];
-
 export const sobreCamila = {
-  texto: "Camila Brunet é neuropsicóloga, dedicada à compreensão do funcionamento cognitivo, emocional e comportamental de cada pessoa. Seu trabalho busca unir conhecimento técnico, escuta cuidadosa e uma abordagem individualizada, tornando o processo de avaliação mais claro, acolhedor e significativo.",
-  itens: [
-    { label: "Formação", value: "Psicologia — formação acadêmica fictícia para demonstração do layout." },
-    { label: "Especialização", value: "Pós-graduação em Neuropsicologia e Avaliação Neuropsicológica — informação fictícia para demonstração." },
-    { label: "Experiência", value: "Atuação clínica com foco em avaliação neuropsicológica, investigação cognitiva e acompanhamento de diferentes demandas relacionadas ao funcionamento mental — informação fictícia para demonstração." },
-    { label: "Localização", value: "São Paulo — SP" },
-    { label: "Atendimento", value: "Online para todo o Brasil" },
-    { label: "Registro profissional", value: "CRP 06/123456 (Dado demonstrativo fictício)" },
-  ]
+  titulo: "Camila Brunet",
+  crp: "CRP 06/123456",
+  texto: "Camila Brunet é neuropsicóloga, dedicada à compreensão do funcionamento cognitivo, emocional e comportamental de cada pessoa. Sua atuação busca unir conhecimento técnico, escuta cuidadosa e uma abordagem individualizada, proporcionando um processo de avaliação neuropsicológica mais claro, acolhedor e significativo. Possui formação em Psicologia e pós-graduação em Neuropsicologia e Avaliação Neuropsicológica. Atua clinicamente com foco em avaliação neuropsicológica, investigação cognitiva e acompanhamento de diferentes demandas relacionadas ao funcionamento mental. Com atendimento em São Paulo – SP e modalidade online para todo o Brasil, Camila busca oferecer um espaço de acolhimento e cuidado, respeitando as particularidades e necessidades de cada pessoa.",
 };
 
 export const diferenciais = [
@@ -169,7 +129,7 @@ export const faq = [
   },
   {
     q: "Quanto tempo dura uma avaliação?",
-    a: "A duração varia conforme a demanda e os procedimentos adequados a cada caso. [Inserir informação sobre duração e número de encontros]",
+    a: "A duração varia conforme a demanda e os procedimentos adequados a cada caso.",
   },
   {
     q: "Como funciona o processo?",
@@ -189,6 +149,6 @@ export const faq = [
   },
   {
     q: "Como agendar uma avaliação?",
-    a: "O agendamento é realizado através de contato inicial pelo Instagram para alinhamento da demanda e disponibilidade. [Link editável para agendamento]",
+    a: "O agendamento é realizado através de contato inicial pelo Instagram para alinhamento da demanda e disponibilidade.",
   },
 ];
