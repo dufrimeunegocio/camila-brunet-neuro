@@ -154,7 +154,7 @@ export const diferenciais = [
     titulo: "Escuta",
     texto: "Compreender a história e o contexto é parte importante do processo.",
   },
-  { titulo: "Análise", texto: "Los resultados devem ser interpretados de forma integrada." },
+  { titulo: "Análise", texto: "Os resultados devem ser interpretados de forma integrada." },
   { titulo: "Clareza", texto: "As informações devem ser apresentadas de maneira compreensível." },
 ];
 
