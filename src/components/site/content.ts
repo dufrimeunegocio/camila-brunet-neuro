@@ -16,61 +16,62 @@ export const contato = {
   localizacao: "São Paulo — SP",
   atendimento: "Atendimento online para todo o Brasil",
   crp: "CRP 06/123456",
+  dominio: "https://camila-brunet-neuro.lovable.app",
 };
 
 export const sinais = [
-  "Dificuldades de atenção e concentração",
-  "Esquecimentos frequentes",
-  "Dificuldades de aprendizagem",
-  "Alterações de memória",
-  "Dificuldades de organização",
-  "Questões relacionadas ao desenvolvimento",
-  "Suspeitas ou investigação de condições neuropsicológicas",
-  "Mudanças no funcionamento cognitivo",
-  "Dificuldades que impactam a rotina, estudos ou trabalho",
+  "Dificuldades de atenção e concentração (TDAH)",
+  "Esquecimentos frequentes e falhas de memória",
+  "Dificuldades de aprendizagem escolar ou acadêmica",
+  "Alterações cognitivas e comportamentais",
+  "Dificuldades de organização e planejamento",
+  "Questões relacionadas ao desenvolvimento infantil e adulto",
+  "Suspeitas de condições neuropsicológicas",
+  "Mudanças súbitas no funcionamento mental",
+  "Dificuldades que impactam o trabalho ou estudos",
 ];
 
 export const servicos = [
   {
     titulo: "Avaliação neuropsicológica completa",
-    texto: "Investigação detalhada de memória, atenção, linguagem, raciocínio e funções executivas.",
+    texto: "Investigação detalhada de memória, atenção, linguagem, raciocínio e funções executivas para diagnóstico e orientação.",
   },
   {
     titulo: "Avaliação para TDAH e dificuldades de aprendizagem",
-    texto: "Identificação de alterações cognitivas e comportamentais relacionadas a TDAH, dislexia e outras dificuldades.",
+    texto: "Identificação de alterações cognitivas relacionadas a TDAH, dislexia e outras demandas de aprendizagem.",
   },
   {
     titulo: "Avaliação cognitiva e emocional",
-    texto: "Análise das funções cognitivas e aspectos emocionais para auxiliar no diagnóstico e planejamento do tratamento.",
+    texto: "Análise integrada das funções cognitivas e aspectos emocionais para auxiliar no planejamento terapêutico.",
   },
 ];
 
 export const dominios = [
   {
-    titulo: "Atenção",
-    texto: "Compreensão de diferentes aspectos relacionados à atenção e concentração.",
+    titulo: "Atenção e Foco",
+    texto: "Compreensão de diferentes aspectos relacionados à atenção sustentada, alternada e concentração.",
   },
   {
     titulo: "Memória",
-    texto: "Investigação de diferentes processos relacionados à memória.",
+    texto: "Investigação de processos de codificação, armazenamento e evocação de informações.",
   },
   {
-    titulo: "Funções executivas",
+    titulo: "Funções Executivas",
     texto:
-      "Análise de habilidades como planejamento, organização, controle e flexibilidade cognitiva.",
+      "Análise de habilidades como planejamento, organização, controle inibitório e flexibilidade cognitiva.",
   },
   {
-    titulo: "Linguagem",
-    texto: "Investigação de aspectos relacionados ao processamento e uso da linguagem.",
+    titulo: "Linguagem e Comunicação",
+    texto: "Investigação de aspectos relacionados ao processamento, compreensão e uso da linguagem.",
   },
   {
-    titulo: "Raciocínio",
-    texto: "Compreensão de diferentes habilidades de raciocínio e resolução de problemas.",
+    titulo: "Raciocínio Lógico",
+    texto: "Compreensão de habilidades de raciocínio verbal, não-verbal e resolução de problemas.",
   },
   {
-    titulo: "Aspectos emocionais e comportamentais",
+    titulo: "Aspectos Emocionais",
     texto:
-      "Consideração de aspectos emocionais e comportamentais relevantes para a compreensão do funcionamento global.",
+      "Consideração de fatores emocionais e comportamentais relevantes para o funcionamento global do indivíduo.",
   },
 ];
 
@@ -78,77 +79,77 @@ export const etapas = [
   {
     numero: "01",
     titulo: "Primeiro contato",
-    texto: "Momento para compreender a demanda e conhecer as necessidades da pessoa.",
+    texto: "Momento para compreender a demanda inicial e alinhar expectativas sobre o processo.",
   },
   {
     numero: "02",
-    titulo: "Entrevista inicial",
-    texto: "Levantamento de informações importantes sobre história, rotina e contexto.",
+    titulo: "Entrevista inicial (Anamnese)",
+    texto: "Levantamento detalhado sobre a história de vida, rotina, desenvolvimento e contexto atual.",
   },
   {
     numero: "03",
-    titulo: "Avaliação",
-    texto: "Aplicação de instrumentos e procedimentos adequados à demanda apresentada.",
+    titulo: "Sessões de Avaliação",
+    texto: "Aplicação de testes e escalas validadas, observação clínica e procedimentos técnicos específicos.",
   },
   {
     numero: "04",
-    titulo: "Análise dos resultados",
-    texto: "Integração cuidadosa das informações obtidas ao longo do processo.",
+    titulo: "Análise Integrada",
+    texto: "Estudo cuidadoso de todos os dados obtidos para elaboração do perfil neuropsicológico.",
   },
   {
     numero: "05",
-    titulo: "Devolutiva",
-    texto: "Apresentação dos resultados e orientações de maneira clara e individualizada.",
+    titulo: "Devolutiva e Laudo",
+    texto: "Entrega do laudo com explicação dos resultados e orientações práticas individualizadas.",
   },
 ];
 
 export const sobreCamila = {
   titulo: "Camila Brunet",
   crp: "CRP 06/123456",
-  texto: "Camila Brunet é neuropsicóloga, dedicada à compreensão do funcionamento cognitivo, emocional e comportamental de cada pessoa. Sua atuação busca unir conhecimento técnico, escuta cuidadosa e uma abordagem individualizada, proporcionando um processo de avaliação neuropsicológica mais claro, acolhedor e significativo. Possui formação em Psicologia e pós-graduação em Neuropsicologia e Avaliação Neuropsicológica. Atua clinicamente com foco em avaliação neuropsicológica, investigação cognitiva e acompanhamento de diferentes demandas relacionadas ao funcionamento mental. Com atendimento em São Paulo – SP e modalidade online para todo o Brasil, Camila busca oferecer um espaço de acolhimento e cuidado, respeitando as particularidades e necessidades de cada pessoa.",
+  texto: "Camila Brunet é neuropsicóloga em São Paulo, dedicada à compreensão do funcionamento cognitivo, emocional e comportamental. Sua atuação une rigor técnico, ética e uma escuta acolhedora, proporcionando uma avaliação neuropsicológica clara e humanizada. Com formação sólida e pós-graduação na área, foca em investigação cognitiva para diversas demandas mentais. Oferece atendimento presencial em São Paulo – SP e modalidade online para todo o Brasil, sempre respeitando a individualidade de cada paciente.",
 };
 
 export const diferenciais = [
-  { titulo: "Individualidade", texto: "Cada avaliação parte de uma demanda específica." },
+  { titulo: "Individualidade", texto: "Processo personalizado conforme a necessidade de cada paciente." },
   {
-    titulo: "Escuta",
-    texto: "Compreender a história e o contexto é parte importante do processo.",
+    titulo: "Escuta Atenta",
+    texto: "Valorização da história de vida e do contexto biopsicossocial.",
   },
-  { titulo: "Análise", texto: "Os resultados devem ser interpretados de forma integrada." },
-  { titulo: "Clareza", texto: "As informações devem ser apresentadas de maneira compreensível." },
+  { titulo: "Rigor Técnico", texto: "Uso de instrumentos validados e análise científica dos dados." },
+  { titulo: "Clareza", texto: "Resultados explicados de forma acessível e orientações assertivas." },
 ];
 
 export const faq = [
   {
     q: "O que é uma avaliação neuropsicológica?",
-    a: "É um processo estruturado de investigação que busca compreender como uma pessoa funciona em aspectos cognitivos, comportamentais e emocionais. Envolve entrevistas, aplicação de instrumentos e análise integrada das informações, sempre considerando a história e o contexto de vida de cada pessoa.",
+    a: "É um exame clínico que utiliza testes e escalas para investigar o funcionamento do cérebro em relação ao comportamento e cognição (atenção, memória, linguagem, etc.).",
   },
   {
-    q: "Para quem a avaliação neuropsicológica é indicada?",
-    a: "De maneira geral, a avaliação pode ser indicada quando existem dúvidas ou dificuldades relacionadas ao funcionamento cognitivo, ao aprendizado, à rotina, aos estudos ou ao trabalho. A indicação é sempre individual e definida a partir da demanda apresentada e, quando houver, de encaminhamentos de outros profissionais.",
+    q: "Quem deve procurar uma neuropsicóloga?",
+    a: "Pessoas com queixas de memória, falta de atenção, dificuldades no aprendizado ou que buscam auxílio diagnóstico para condições como TDAH ou TEA.",
   },
   {
-    q: "Quanto tempo dura uma avaliação?",
-    a: "A duração varia conforme a demanda e os procedimentos adequados a cada caso.",
+    q: "A avaliação pode ser feita online?",
+    a: "Sim, muitos protocolos e escalas permitem a aplicação remota com segurança e validade científica para pacientes em todo o Brasil.",
   },
   {
-    q: "Como funciona o processo?",
-    a: "O processo costuma envolver primeiro contato, entrevista inicial, aplicação dos procedimentos de avaliação, análise dos resultados e devolutiva. Cada etapa é planejada de acordo com a demanda apresentada.",
+    q: "Quanto tempo dura o processo completo?",
+    a: "Geralmente entre 5 a 8 sessões, dependendo da complexidade do caso e dos objetivos da investigação.",
   },
   {
-    q: "A avaliação neuropsicológica fornece diagnóstico?",
-    a: "A avaliação é um processo de investigação e compreensão do funcionamento cognitivo, comportamental e emocional. Seus resultados podem contribuir para processos diagnósticos conduzidos de forma integrada com outros profissionais de saúde, mas não substituem essa avaliação conjunta.",
+    q: "Preciso de encaminhamento médico?",
+    a: "Não é obrigatório, mas é comum recebermos indicações de neurologistas, psiquiatras ou pediatras para auxiliar no fechamento de diagnósticos.",
   },
   {
-    q: "Qual a diferença entre avaliação psicológica e neuropsicológica?",
-    a: "Ambas são processos avaliativos conduzidos por psicólogos. A avaliação neuropsicológica tem foco específico na compreensão de funções cognitivas — como atenção, memória, linguagem, raciocínio e funções executivas — sempre articuladas a aspectos emocionais e comportamentais.",
+    q: "A avaliação fornece um diagnóstico?",
+    a: "A avaliação neuropsicológica identifica o perfil cognitivo, o que é fundamental para que o médico possa concluir um diagnóstico clínico.",
   },
   {
-    q: "O que acontece depois da avaliação?",
-    a: "Após a análise das informações, é realizada uma devolutiva com apresentação dos resultados e orientações de forma clara e individualizada, considerando o contexto e as necessidades de cada pessoa.",
+    q: "Qual a diferença para a terapia comum?",
+    a: "A avaliação tem um tempo determinado e um objetivo investigativo específico, enquanto a psicoterapia é um processo contínuo de tratamento.",
   },
   {
-    q: "Como agendar uma avaliação?",
-    a: "O agendamento é realizado através de contato inicial pelo Instagram para alinhamento da demanda e disponibilidade.",
+    q: "Como agendar uma consulta em São Paulo ou Online?",
+    a: "Você pode iniciar o contato via direct no Instagram @camila_brunet para verificar horários disponíveis.",
   },
 ];
