@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type {} from "@tanstack/react-start";
+import { contato } from "@/components/site/content";
 
-// TODO: substituir pela URL do projeto quando o domínio for definido.
-const BASE_URL = "";
+const BASE_URL = contato.dominio || "https://camila-brunet-neuro.lovable.app";
 
 interface SitemapEntry {
   path: string;
