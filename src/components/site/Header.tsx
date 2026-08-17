@@ -94,11 +94,11 @@ export function Header() {
             ))}
           </ul>
           <a
-            href="#contato"
+            href="#avaliacao"
             onClick={() => setOpen(false)}
             className="mt-5 block rounded-md bg-wine px-5 py-3.5 text-center text-[15px] font-medium text-white"
           >
-            Agendar avaliação
+            Conhecer a avaliação
           </a>
         </nav>
       </div>
