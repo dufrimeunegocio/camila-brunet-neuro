@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
-      { name: "twitter:image", content: `${contato.dominio}/og-image.png` },
+      { name: \"twitter:image\", content: heroFoto.url },
       { name: "author", content: "Camila Brunet" },
     ],
     links: [
@@ -177,10 +177,7 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-end gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
             <Reveal className="pb-16 lg:pb-32">
               <SectionLabel>Neuropsicologia • Atendimento Online</SectionLabel>
-              <h1 className="mt-6 max-w-xl text-[2.25rem] font-display leading-[1.1] text-navy sm:text-5xl lg:text-[3.6rem]">
-                Avaliação Neuropsicológica com olhar{" "}
-                <span className="text-wine">individualizado</span> e acolhedor
-              </h1>
+              <h1 className=\"mt-6 max-w-xl text-[2.25rem] font-display leading-[1.1] text-navy sm:text-5xl lg:text-[3.6rem]\">\n                Avaliação Neuropsicológica em <span className=\"text-wine\">São Paulo</span> e Online\n              </h1>
               <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-muted-foreground sm:text-base">
                 Compreender como você pensa, aprende, se comporta e se relaciona com o mundo é um
                 passo importante para encontrar caminhos mais adequados para cada necessidade.
