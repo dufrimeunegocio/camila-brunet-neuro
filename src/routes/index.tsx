@@ -36,8 +36,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://camila-brunet.lovable.app" },
       { property: "og:locale", content: "pt_BR" },
+      { name: "geo.region", content: "BR-SP" },
+      { name: "geo.placename", content: "São Paulo" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
@@ -53,6 +55,13 @@ export const Route = createFileRoute("/")({
               "@type": ["Psychologist", "ProfessionalService"],
               name: "Camila Brunet — Neuropsicologia",
               description: DESCRIPTION,
+              address: {
+                "@type": "PostalAddress",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "addressCountry": "BR"
+              },
+              areaServed: "BR",
               medicalSpecialty: "Psychiatric",
               knowsAbout: [
                 "Avaliação neuropsicológica",
@@ -109,10 +118,10 @@ function Index() {
             aria-hidden="true"
             className="pointer-events-none absolute -left-24 bottom-24 h-64 w-64 rounded-full border border-navy/10"
           />
-          <div className="mx-auto grid max-w-7xl items-end gap-10 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
-            <Reveal className="pb-14 lg:pb-24">
-              <SectionLabel>Neuropsicologia</SectionLabel>
-              <h1 className="mt-6 max-w-xl text-[2.15rem] leading-[1.12] text-navy sm:text-5xl lg:text-[3.4rem]">
+          <div className="mx-auto grid max-w-7xl items-end gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+            <Reveal className="pb-16 lg:pb-32">
+              <SectionLabel>Neuropsicologia • Atendimento Online</SectionLabel>
+              <h1 className="mt-6 max-w-xl text-[2.25rem] font-display leading-[1.1] text-navy sm:text-5xl lg:text-[3.6rem]">
                 Avaliação Neuropsicológica com olhar{" "}
                 <span className="text-wine">individualizado</span> e acolhedor
               </h1>

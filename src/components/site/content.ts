@@ -189,6 +189,6 @@ export const faq = [
   },
   {
     q: "Como agendar uma avaliação?",
-    a: "O agendamento é feito a partir de um primeiro contato, no qual a demanda é compreendida e as próximas etapas são combinadas. [Inserir canais e informações de agendamento]",
+    a: "O agendamento é realizado através de contato inicial pelo Instagram para alinhamento da demanda e disponibilidade. [Link editável para agendamento]",
   },
 ];

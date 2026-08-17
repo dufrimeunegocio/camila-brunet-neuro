@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
-import { navLinks } from "./content";
+import { navLinks, contato } from "./content";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -44,6 +44,18 @@ export function Header() {
           </span>
         </a>
 
+        <div className="flex items-center gap-6">
+          <a 
+            href={contato.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden text-navy/60 transition-colors hover:text-wine sm:flex items-center gap-2 text-xs font-medium"
+            aria-label="Instagram de Camila Brunet"
+          >
+            <Instagram className="h-4 w-4" />
+            <span className="hidden lg:inline">{contato.instagramHandle}</span>
+          </a>
+
         <nav aria-label="Navegação principal" className="hidden items-center gap-7 xl:flex">
           {navLinks.map((l) => (
             <a
@@ -61,6 +73,7 @@ export function Header() {
             Conhecer a avaliação
           </a>
         </nav>
+        </div>
 
         <button
           type="button"
