@@ -86,6 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Camila Brunet" },
       { property: "og:site_name", content: "Camila Brunet — Neuropsicologia" },
       { property: "og:type", content: "website" },
+      { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
