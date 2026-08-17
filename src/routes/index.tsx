@@ -357,12 +357,14 @@ function Index() {
         {/* FAQ */}
         <section id="faq" className="bg-background py-20 lg:py-28">
           <div className="mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:px-8">
-            <Reveal>
-              <SectionLabel>Perguntas frequentes</SectionLabel>
+            <Reveal className="text-center">
+              <div className="flex justify-center">
+                <SectionLabel>Perguntas frequentes</SectionLabel>
+              </div>
               <h2 className="mt-6 text-[1.75rem] leading-tight text-navy sm:text-4xl">
                 Perguntas frequentes
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
+              <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
                 Confira algumas das principais dúvidas sobre avaliação neuropsicológica e o processo de acompanhamento.
               </p>
             </Reveal>
