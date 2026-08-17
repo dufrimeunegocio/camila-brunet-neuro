@@ -19,9 +19,9 @@ import {
 import heroFoto from "@/assets/camila-hero.png.asset.json";
 import sobreFoto from "@/assets/camila-sobre.png.asset.json";
 
-const TITLE = "Camila Brunet | Neuropsicóloga — Avaliação Neuropsicológica";
+const TITLE = "Camila Brunet | Neuropsicologia — Avaliação Neuropsicológica";
 const DESCRIPTION =
-  "Avaliação neuropsicológica com olhar individualizado e acolhedor. Compreensão de atenção, memória, funções executivas e linguagem com Camila Brunet, neuropsicóloga.";
+  "Avaliação neuropsicológica com olhar individualizado e acolhedor. Compreenda seu funcionamento cognitivo com a neuropsicóloga Camila Brunet.";
 
 export const Route = createFileRoute("/")({
   component: Index,
