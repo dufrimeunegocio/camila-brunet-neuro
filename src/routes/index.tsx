@@ -16,6 +16,8 @@ import {
   servicosSecundarios,
   sinais,
 } from "@/components/site/content";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { CookieBanner } from "@/components/site/CookieBanner";
 import heroFoto from "@/assets/camila-hero.png.asset.json";
 import sobreFoto from "@/assets/camila-sobre.png.asset.json";
 
@@ -52,8 +54,11 @@ export const Route = createFileRoute("/")({
               medicalSpecialty: "Psychiatric",
               knowsAbout: [
                 "Avaliação neuropsicológica",
-                "Neuropsicologia",
+                "Neuropsicóloga",
+                "Avaliação neuropsicológica infantil",
+                "Avaliação neuropsicológica de adultos",
                 "Avaliação cognitiva",
+                "Neuropsicologia",
                 "Avaliação de atenção",
                 "Avaliação de memória",
                 "Avaliação das funções executivas",
@@ -86,8 +91,10 @@ function SectionLabel({ children }: { children: string }) {
 
 function Index() {
   return (
-    <div className="min-h-dvh bg-background">
+    <div className="min-h-dvh bg-background selection:bg-wine/10 selection:text-wine">
       <Header />
+      <WhatsAppButton />
+      <CookieBanner />
 
       <main id="conteudo">
         {/* HERO */}
@@ -153,7 +160,11 @@ function Index() {
         </section>
 
         {/* IDENTIFICAÇÃO */}
-        <section className="bg-background py-20 lg:py-28">
+        <section className="relative overflow-hidden bg-background py-20 lg:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-wine/10 to-transparent"
+          />
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <Reveal className="max-w-2xl">
               <SectionLabel>Quando buscar</SectionLabel>
@@ -302,7 +313,11 @@ function Index() {
         </section>
 
         {/* SOBRE */}
-        <section id="sobre" className="bg-background py-20 lg:py-28">
+        <section id="sobre" className="relative bg-background py-20 lg:py-28">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-1/2 top-0 h-40 w-px bg-wine/10 lg:right-8"
+          />
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
             <Reveal className="relative">
               <div
