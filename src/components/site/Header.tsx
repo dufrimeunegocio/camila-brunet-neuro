@@ -28,7 +28,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-8">
-        <a href="#inicio" className="flex min-w-0 items-center gap-3" aria-label="Camila Brunet — Neuropsicologia, ir para o início">
+        <a href="#inicio" className=\"flex min-w-0 items-center gap-3 focus-visible:outline-wine\" aria-label=\"Camila Brunet — Neuropsicologia, ir para o início\">
           <img
             src={logo.url}
             alt="Logotipo Camila Brunet — Psicologia e Avaliação Neuropsicológica"
