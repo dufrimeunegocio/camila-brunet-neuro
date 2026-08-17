@@ -37,45 +37,27 @@ export function Footer() {
           </ul>
         </nav>
 
-        <div>
-          <h2 className="font-display text-lg text-white">Contato</h2>
-          <span className="rule-wine mt-3" aria-hidden="true" />
-          <ul className="mt-5 space-y-3 text-sm">
-            <li className="flex items-start gap-3">
-              <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-wine-light" aria-hidden="true" />
-              {contato.whatsapp ? (
-                <a href={contato.whatsapp} className="hover:text-white">
-                  WhatsApp
-                </a>
-              ) : (
-                <span>WhatsApp: [inserir número]</span>
-              )}
-            </li>
-            <li className="flex items-start gap-3">
-              <Instagram className="mt-0.5 h-4 w-4 shrink-0 text-wine-light" aria-hidden="true" />
-              {contato.instagram ? (
-                <a href={contato.instagram} className="hover:text-white">
-                  Instagram
-                </a>
-              ) : (
-                <span>Instagram: [inserir perfil]</span>
-              )}
-            </li>
-            <li className="flex items-start gap-3">
-              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-wine-light" aria-hidden="true" />
-              {contato.email ? (
-                <a href={`mailto:${contato.email}`} className="hover:text-white">
-                  {contato.email}
-                </a>
-              ) : (
-                <span>E-mail: [inserir e-mail]</span>
-              )}
-            </li>
-            <li className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-wine-light" aria-hidden="true" />
-              <span>{contato.endereco || "Endereço: [inserir, se aplicável]"}</span>
+        <div className="flex flex-col gap-6">
+          <h2 className="font-display text-lg text-white">Redes Sociais</h2>
+          <span className="rule-wine" aria-hidden="true" />
+          <ul className="space-y-4 text-sm">
+            <li className="flex items-center gap-3 group">
+              <Instagram className="h-5 w-5 shrink-0 text-wine-light transition-transform group-hover:scale-110" aria-hidden="true" />
+              <a 
+                href={contato.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="transition-colors hover:text-white"
+              >
+                {contato.instagramHandle}
+              </a>
             </li>
           </ul>
+          <div className="mt-4 pt-6 border-t border-white/10">
+             <p className="text-xs text-white/50 leading-relaxed italic">
+               Atendimento online para todo o Brasil.
+             </p>
+          </div>
         </div>
       </div>
 
