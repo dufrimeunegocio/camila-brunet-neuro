@@ -38,17 +38,17 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: contato.dominio },
-      { property: "og:image", content: `${contato.dominio}/og-image.png` }, // Supõe a existência dessa imagem
+      { property: "og:image", content: heroFoto.url },
       { property: "og:locale", content: "pt_BR" },
       { name: "geo.region", content: "BR-SP" },
       { name: "geo.placename", content: "São Paulo" },
-      { name: "geo.position", content: "-23.5505;-46.6333" }, // Centro de SP
+      { name: "geo.position", content: "-23.5505;-46.6333" },
       { name: "ICBM", content: "-23.5505, -46.6333" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
-      { name: \"twitter:image\", content: heroFoto.url },
+      { name: "twitter:image", content: heroFoto.url },
       { name: "author", content: "Camila Brunet" },
     ],
     links: [
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/")({
                 "latitude": -23.5505,
                 "longitude": -46.6333
               },
-              "telephone": "+551100000000", // Placeholder se necessário, mas usuário pediu para tirar contatos físicos
+              "telephone": "+5511900000000",
               "priceRange": "$$",
               "openingHoursSpecification": [
                 {
@@ -157,6 +157,8 @@ function SectionLabel({ children }: { children: string }) {
 }
 
 function Index() {
+  const year = new Date().getFullYear();
+
   return (
     <div className="min-h-dvh bg-background selection:bg-wine/10 selection:text-wine">
       <Header />
@@ -177,7 +179,9 @@ function Index() {
           <div className="mx-auto grid max-w-7xl items-end gap-10 px-5 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
             <Reveal className="pb-16 lg:pb-32">
               <SectionLabel>Neuropsicologia • Atendimento Online</SectionLabel>
-              <h1 className=\"mt-6 max-w-xl text-[2.25rem] font-display leading-[1.1] text-navy sm:text-5xl lg:text-[3.6rem]\">\n                Avaliação Neuropsicológica em <span className=\"text-wine\">São Paulo</span> e Online\n              </h1>
+              <h1 className="mt-6 max-w-xl text-[2.25rem] font-display leading-[1.1] text-navy sm:text-5xl lg:text-[3.6rem]">
+                Avaliação Neuropsicológica em <span className="text-wine">São Paulo</span> e Online
+              </h1>
               <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-muted-foreground sm:text-base">
                 Compreender como você pensa, aprende, se comporta e se relaciona com o mundo é um
                 passo importante para encontrar caminhos mais adequados para cada necessidade.
@@ -203,7 +207,7 @@ function Index() {
               />
               <img
                 src={heroFoto.url}
-                alt="Camila Brunet, neuropsicóloga, sorrindo com um tablet nas mãos"
+                alt="Camila Brunet, neuropsicóloga em São Paulo, sorrindo com um tablet nas mãos"
                 className="relative w-full max-w-md object-contain"
                 width={1024}
                 height={1536}
@@ -227,8 +231,7 @@ function Index() {
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
                 Alguns sinais do dia a dia podem levantar dúvidas sobre o funcionamento cognitivo e
-                emocional. A avaliação neuropsicológica é um processo de investigação e compreensão
-                — não uma resposta pronta.
+                emocional. A avaliação neuropsicológica é um processo de investigação e compreensão.
               </p>
             </Reveal>
 
@@ -260,8 +263,7 @@ function Index() {
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
                 É um processo estruturado que busca compreender diferentes aspectos do funcionamento
-                cognitivo, comportamental e emocional, considerando a história e as particularidades
-                de cada pessoa.
+                cognitivo, comportamental e emocional.
               </p>
             </Reveal>
 
@@ -357,7 +359,7 @@ function Index() {
               />
               <img
                 src={sobreFoto.url}
-                alt="Retrato de Camila Brunet, neuropsicóloga, em seu consultório"
+                alt="Retrato de Camila Brunet, neuropsicóloga, em seu consultório em São Paulo"
                 className="relative w-full rounded-lg object-cover"
                 loading="lazy"
                 width={1080}
@@ -446,23 +448,24 @@ function Index() {
           />
           <div className="relative mx-auto max-w-3xl px-5 text-center lg:px-8">
             <span className="mx-auto block h-px w-10 bg-wine-light" aria-hidden="true" />
-            <h2 className="mt-8 text-[1.75rem] leading-tight text-white sm:text-4xl">
-              Quer entender melhor suas dificuldades e possibilidades?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-white/70">
-              Entre em contato para conhecer o processo de avaliação neuropsicológica e entender
-              qual pode ser o melhor caminho para sua necessidade.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4">
-              <a
-                href={contato.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full rounded-md bg-wine px-8 py-4 text-[15px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-wine-light sm:w-auto"
-              >
-                Conhecer no Instagram
-              </a>
-            </div>
+            <Reveal>
+              <h2 className="mt-8 font-display text-[2rem] leading-tight text-white sm:text-5xl">
+                Quer entender melhor suas dificuldades e possibilidades?
+              </h2>
+              <p className="mt-6 text-lg text-white/70">
+                Atendimento presencial em São Paulo e online para todo o Brasil.
+              </p>
+              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <a
+                  href={contato.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 rounded-md bg-wine px-8 py-4 font-medium text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-wine-dark"
+                >
+                  Ver Instagram {contato.instagramHandle}
+                </a>
+              </div>
+            </Reveal>
           </div>
         </section>
       </main>
