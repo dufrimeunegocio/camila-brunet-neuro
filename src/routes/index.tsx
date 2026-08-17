@@ -184,10 +184,7 @@ function Index() {
                 <Reveal key={sinal} delay={i * 50}>
                   <div className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background p-6 transition-all duration-500 hover:-translate-y-2 hover:border-wine/30 hover:shadow-[0_20px_40px_-20px_rgba(122,24,51,0.15)]">
                     <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-wine/5 transition-transform duration-500 group-hover:scale-[2.5]" aria-hidden="true" />
-                    <span className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-offwhite text-wine transition-colors duration-300 group-hover:bg-wine group-hover:text-white">
-                      <span className="h-1.5 w-1.5 rotate-45 border-r border-b border-current" aria-hidden="true" />
-                    </span>
-                    <h3 className="relative mt-6 text-[15px] font-medium leading-relaxed text-navy group-hover:text-wine-dark transition-colors">
+                    <h3 className="relative mt-2 text-xl font-medium leading-relaxed text-navy group-hover:text-wine-dark transition-colors">
                       {sinal}
                     </h3>
                     <div className="mt-auto pt-4">
@@ -277,33 +274,15 @@ function Index() {
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {servicos.map((s, i) => (
                 <Reveal key={s.titulo} delay={i * 60}>
-                  <article className={`group h-full flex flex-col rounded-xl border p-8 transition-all duration-300 hover:-translate-y-1 ${
-                    s.principal 
-                      ? "border-wine/30 bg-background shadow-[0_20px_50px_-20px_rgba(122,24,51,0.12)] lg:col-span-2 lg:flex-row lg:gap-10" 
-                      : "border-border bg-background hover:border-wine/20"
-                  }`}>
-                    <div className={s.principal ? "lg:flex-1" : ""}>
-                      {s.principal && (
-                        <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-wine">
-                          Serviço principal
-                        </p>
-                      )}
-                      <h3 className={`text-navy ${s.principal ? "text-2xl sm:text-3xl" : "text-xl"}`}>
+                  <article className="group h-full flex flex-col rounded-xl border p-8 transition-all duration-300 hover:-translate-y-1 border-border bg-background hover:border-wine/20">
+                    <div>
+                      <h3 className="text-navy text-xl">
                         {s.titulo}
                       </h3>
                       <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
                         {s.texto}
                       </p>
                     </div>
-                    {s.principal && (
-                      <div className="mt-8 flex flex-wrap gap-2 lg:mt-0 lg:w-64 lg:content-start">
-                        {dominios.slice(0, 4).map((d) => (
-                          <span key={d.titulo} className="rounded-full bg-offwhite px-4 py-1.5 text-[11px] font-medium text-navy/70 border border-navy/5">
-                            {d.titulo}
-                          </span>
-                        ))}
-                      </div>
-                    )}
                   </article>
                 </Reveal>
               ))}
@@ -336,23 +315,13 @@ function Index() {
             <Reveal delay={100}>
               <SectionLabel>Sobre Camila Brunet</SectionLabel>
               <h2 className="mt-6 text-[1.75rem] leading-tight text-navy sm:text-4xl">
-                Sobre Camila Brunet
+                {sobreCamila.titulo}
               </h2>
+              <p className="mt-2 text-sm font-medium uppercase tracking-[0.18em] text-wine">
+                {sobreCamila.crp}
+              </p>
               <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
                 {sobreCamila.texto}
-              </p>
-              <dl className="mt-9 space-y-5">
-                {sobreCamila.itens.map((item) => (
-                  <div key={item.label} className="border-b border-border pb-4">
-                    <dt className="text-[11px] font-bold uppercase tracking-[0.18em] text-wine">
-                      {item.label}
-                    </dt>
-                    <dd className="mt-1.5 text-[15px] text-navy/85 leading-relaxed">{item.value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="mt-8 text-[11px] italic text-muted-foreground/60">
-                * As informações acima são demonstrativas para este layout.
               </p>
             </Reveal>
           </div>
@@ -387,7 +356,7 @@ function Index() {
 
         {/* FAQ */}
         <section id="faq" className="bg-background py-20 lg:py-28">
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col gap-12 px-5 lg:px-8">
             <Reveal>
               <SectionLabel>Perguntas frequentes</SectionLabel>
               <h2 className="mt-6 text-[1.75rem] leading-tight text-navy sm:text-4xl">
@@ -431,14 +400,13 @@ function Index() {
             </p>
             <div className="mt-10 flex flex-col items-center gap-4">
               <a
-                href="#contato"
+                href={contato.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full rounded-md bg-wine px-8 py-4 text-[15px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-wine-light sm:w-auto"
               >
-                Agendar avaliação
+                Conhecer no Instagram
               </a>
-              <p className="text-xs text-white/50">
-                Canais de contato: [inserir WhatsApp, e-mail e demais canais]
-              </p>
             </div>
           </div>
         </section>
