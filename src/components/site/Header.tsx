@@ -27,7 +27,7 @@ export function Header() {
         scrolled ? "bg-background/90 shadow-[0_1px_0_0_var(--border)] backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
         <a href="#inicio" className="flex min-w-0 items-center gap-3 focus-visible:outline-wine" aria-label="Camila Brunet — Neuropsicologia, ir para o início">
           <img
             src={logo.url}
@@ -44,37 +44,36 @@ export function Header() {
           </span>
         </a>
 
-        <div className="flex items-center gap-6">
-
-        <nav aria-label="Navegação principal" className="hidden items-center gap-7 xl:flex">
-          {navLinks.map((l) => (
+        <div className="flex items-center gap-4">
+          <nav aria-label="Navegação principal" className="hidden items-center gap-7 xl:flex">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="relative text-sm text-navy/80 transition-colors hover:text-wine after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-wine after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </a>
+            ))}
             <a
-              key={l.href}
-              href={l.href}
-              className="relative text-sm text-navy/80 transition-colors hover:text-wine after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-wine after:transition-all after:duration-300 hover:after:w-full"
+              href="#avaliacao"
+              className="rounded-md bg-wine px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_20px_-10px_var(--wine)] transition-all duration-300 hover:bg-wine-dark hover:shadow-[0_10px_24px_-10px_var(--wine)]"
             >
-              {l.label}
+              Conhecer a avaliação
             </a>
-          ))}
-          <a
-            href="#avaliacao"
-            className="rounded-md bg-wine px-5 py-2.5 text-sm font-medium text-white shadow-[0_6px_20px_-10px_var(--wine)] transition-all duration-300 hover:bg-wine-dark hover:shadow-[0_10px_24px_-10px_var(--wine)]"
-          >
-            Conhecer a avaliação
-          </a>
-        </nav>
-        </div>
+          </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="menu-mobile"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:border-wine hover:text-wine xl:hidden"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="menu-mobile"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            className="flex h-11 w-11 items-center justify-center rounded-md border border-border text-navy transition-colors hover:border-wine hover:text-wine xl:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       <div
