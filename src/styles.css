@@ -202,3 +202,9 @@
     scroll-behavior: auto !important;
   }
 }
+
+#lovable-badge {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
